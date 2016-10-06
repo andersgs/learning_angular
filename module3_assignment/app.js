@@ -4,7 +4,7 @@
 angular.module("NarrowItDownApp", [])
 .controller("NarrowItDownController", NarrowItDownController)
 .factory("MenuSearchFactory", MenuSearchFactory)
-.constant("ApiBasePath", "http://davids-restaurant.herokuapp.com")
+.constant("ApiBasePath", "https://davids-restaurant.herokuapp.com")
 .directive("found", FoundItemsDirective);
 
 function FoundItemsDirective() {
