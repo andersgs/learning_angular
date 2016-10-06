@@ -13,6 +13,7 @@ function FoundItemsDirective() {
         scope : {
             foundItems: '<',
             onRemove: '&',
+            displayEmpty: '<',
         },
         // controller: NarrowItDownController,
         // controllerAs: 'narrow',
@@ -69,9 +70,16 @@ function NarrowItDownController(MenuSearchFactory, $http, $q, ApiBasePath) {
     var search_menu = MenuSearchFactory($http, $q, ApiBasePath);
     narrow.searchTerm = '';
     narrow.items = search_menu.getList();
+    narrow.display = false;
     narrow.searchItems = function () {
         search_menu.getMatchedMenuItems(narrow.searchTerm);
         console.log('Here is narrow:', narrow.items);
+        if(narrow.items.length == 0) {
+            narrow.display = true;
+        } else {
+            narrow.display = false;
+        }
+        console.log(narrow.display);
     };
     narrow.removeItem = function(index) {
         narrow.items.splice(index, 1);
