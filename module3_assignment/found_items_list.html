@@ -1,0 +1,25 @@
+<div class="col-md-12">
+<h2>Menu Items</h2>
+<div ng-show="foundItems.length">
+    <!-- <ol>
+        <li ng-repeat="item in foundItems">
+            {{ item.short_name }}. {{item.name}} <br> {{item.description}}
+            <button ng-click="onRemove({index: $index});">Remove Item</button>
+        </li>
+    </ol> -->
+    <div class="panel panel-primary" ng-repeat="item in foundItems">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{ item.short_name }}: {{item.name}}</h3>
+        </div>
+        <div class="panel-body" font-size="120%">
+            {{item.description}}
+            <div style="float: right;">
+            <button class="btn btn-danger" ng-click="onRemove({index: $index});">Remove Item</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-hide="foundItems.length" class='error'>
+    Nothing found.
+</div>
+</div>
