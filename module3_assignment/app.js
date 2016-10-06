@@ -42,7 +42,7 @@ function MenuSearchService($http, $q, ApiBasePath){
         promise.then( function(result) {
             var menuItems = result.data.menu_items;
             for( var i = 0; i < menuItems.length; i++){
-                if( menuItems[i].description.search(searchTerm) != -1){
+                if( menuItems[i].description.search(searchTerm.toLowerCase()) != -1){
                     foundItems.push(menuItems[i]);
                 }
             }
