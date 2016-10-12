@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="MenuApp">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" title="bootstrap">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Welcome to David's Restaurant</title>
+    </head>
+    <body>
+        <div class="container">
+
+            <!-- declare the ui-view -->
+            <ui-view></ui-view>
+
+        </div>
+
+        <!-- declare libs -->
+        <script src="lib/angular.js" charset="utf-8"></script>
+        <script src="lib/angular-ui-router.min.js" charset="utf-8"></script>
+
+        <!-- declare modules -->
+        <script src="src/menuapp.module.js" charset="utf-8"></script>
+
+        <!-- declare routes -->
+        <script src="src/routes.js" charset="utf-8"></script>
+
+        <!-- 'MenuApp' module artifacts -->
+        <script src="src/menucat.component.js"></script>
+        <script src="src/menucat.controller.js"></script>
+        <script src="src/menucat.service.js"></script>
+        <script src="src/catdetail.controller.js" charset="utf-8"></script>
+        <script src="src/catdetail.component.js" charset="utf-8"></script>
+    </body>
+</html>
